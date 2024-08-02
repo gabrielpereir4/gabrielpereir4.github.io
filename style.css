@@ -1,0 +1,117 @@
+* {
+	margin: 0;
+	padding: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove the underline */
+}
+
+a:visited {
+    color: inherit; /* Ensure visited links have the same color */
+}
+
+a:hover, a:focus {
+    color: inherit; /* Keep the same color on hover and focus */
+    text-decoration: none; /* Ensure no underline on hover and focus */
+}
+
+:root{
+    --prim-color: #7900C2;
+    --seco-color: #2B2B2B;
+    --tert-color: #1E1E1E;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto do Google Fonts */
+}
+
+header {
+    height: 10vh;
+    background-color: var(--seco-color);
+}
+
+footer {
+    height: 10vh;
+    background-color: var(--seco-color);
+}
+
+strong{
+    color: var(--prim-color);
+}
+
+.navbar {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fa-2xl{
+    color: var(--prim-color);
+}
+
+li {
+    margin-left: 35px;
+}
+
+main {
+    height: 80vh;
+    background-color: var(--tert-color);
+}
+
+.myprofile{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.profile{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_icon{
+    background-color: var(--prim-color);
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--seco-color);
+    background-image: url(eu.jpg);
+    background-position: center;
+    background-size: 100%;
+}
+
+.profile_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--prim-color);
+    width: 250px;
+    height: 50px;
+    border: 5px solid var(--seco-color);
+    border-radius: 6px;
+    
+}
+
+.profile_button_text{
+}
+
+.about{
+    width: 30%;
+}
+
+.about_me{
+}
+
+
