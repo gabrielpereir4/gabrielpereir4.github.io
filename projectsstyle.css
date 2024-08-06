@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove the underline */
+}
+
+a:visited {
+    color: inherit; /* Ensure visited links have the same color */
+}
+
+a:hover, a:focus {
+    color: inherit; /* Keep the same color on hover and focus */
+    text-decoration: none; /* Ensure no underline on hover and focus */
+}
+
+:root{
+    --prim-color: #7900C2;
+    --seco-color: #2B2B2B;
+    --tert-color: #1E1E1E;
+}
+
+body{
+    font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto do Google Fonts */
+}
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .projects{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

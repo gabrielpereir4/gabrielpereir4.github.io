@@ -107,9 +107,6 @@ main {
     
 }
 
-.profile_button_text{
-}
-
 .about{
     width: 30%;
 }
@@ -137,8 +134,12 @@ main {
     .navbar {
         height: 100%;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
+    }
+
+    .navbar li{
+        margin: 25px;
     }
 
 
