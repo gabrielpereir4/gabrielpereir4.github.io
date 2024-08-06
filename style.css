@@ -36,6 +36,9 @@ header {
 footer {
     height: 10vh;
     background-color: var(--seco-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 strong{
@@ -111,7 +114,77 @@ main {
     width: 30%;
 }
 
-.about_me{
+.about_me h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
+.about_me p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer{
+    font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto do Google Fonts */
+    color: var(--prim-color);
+}
+
+@media (max-width: 768px) {
+    header{
+        position: fixed;
+        width: 100vw;
+    }
+    .navbar {
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+
+    main {
+        height: 100%;
+        background-color: var(--tert-color);
+    }
+
+    .myprofile{
+        height: 200vh;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+    }    
+
+    .profile{
+        height: 100vh;
+    }
+    .about{
+        height: 100vh;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .about_me h1{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .about_me p{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    footer{
+        position: fixed;
+        width: 100vw;
+        bottom: 0; /* Posiciona o footer no fundo da tela */
+
+    }
+
+    .footer{
+        max-width: 80%;
+        
+    }
+}
 
