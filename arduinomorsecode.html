@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="projectsstyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/5214185699.js" crossorigin="anonymous"></script>
     </head>
@@ -26,18 +27,23 @@
             </ul>
         </header>
         <main>
-            <section class="myprofile">
-                <div class="profile">
-                    <div class="profile_icon"></div>
-                    <div class='profile_button'>
-                        <a class='profile_button_text' href="projects.html">Conheça meus projetos</a>
+            <section class="projects">
+                <div class="projects_view">
+                    <h2>Tradutor de Código Morse usando Arduino</h2>
+                    <div class="projects_view_desc">
+                        <img src="arduinomorsecode.png">
+                        <div>Sistema montado com Arduino que lê a entrada de botões ligados a um Protoboard e traduz, baseado na duração do acionamento
+                            dos botões, o valor equivalente em código Morse. Código desenvolvido em C++.
+                        </div>
                     </div>
-                </div>
-                <div class="about">
-                    <h2>Olá!</h2>
-                    <div class="about_me">Meu nome é <h1><strong>Gabriel Pereira.</strong></h1> Sou desenvolvedor de software e estudante
-                         de Análise e Desenvolvimento de Sistemas pela UNICAMP. Construo projetos <strong>backend, fullstack e automações RPA</strong>.
-                        <p>Conheça alguns dos projetos que já participei, alguns dos meus interesses e experiências.</p></div>
+                    <div class='projects_view_tech'>
+                        <h3>Tecnologias Utilizadas</h3>
+                            <div class='projects_view_tech_desc'>
+                                <div>C++</div>
+                                <div>Arduino</div>
+                                <div>Eletrônica</div>
+                            </div>
+                        </div>
                 </div>
             </section>
         </main>
@@ -45,4 +51,4 @@
             <p class="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
         </footer>
     </body>
-</html>
+    </html>

@@ -37,11 +37,79 @@ body{
     color: white;
 }
 
+.projects h1{
+    margin-bottom: 50px;
+}
+
+.projects a{
+    margin: 5px;
+}
+
+.projects_view{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects_view_desc{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px;
+    gap: 20px;
+}
+
+.projects_view_desc img{
+    width: 500px;
+    height: 300px;
+}
+
+.projects_view_tech{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.projects_view_tech_desc{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
 @media (max-width: 768px) {
     .projects{
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .projects_view{
+        gap: 50px;
+    }
+
+    .projects_view h2{
+        max-width: 80%;
+        text-align: center;
+    }
+
+    .projects_view_desc{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0px;
+    }
+
+    .projects_view_desc img{
+        max-width: 100%; /* Define a largura máxima como 100% do contêiner */
+        height: auto;
     }
 }
