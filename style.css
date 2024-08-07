@@ -90,7 +90,7 @@ main {
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid var(--seco-color);
-    background-image: url(eu.jpg);
+    background-image: url(prints/eu.jpg);
     background-position: center;
     background-size: 100%;
 }
