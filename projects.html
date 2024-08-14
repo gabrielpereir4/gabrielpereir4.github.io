@@ -27,18 +27,61 @@
             </ul>
         </header>
         <main>
-            <section class="projects">
-            <h1>Projetos</h1>
-            <a href="linearregression.html"><div>Algoritmo de Regressão Linear Simples</div></a>
-            <a href="arduinomorsecode.html"><div>Tradutor de Código Morse usando Arduino</div></a>
-            <a href="rpachallenge.html"><div>RPA Challenge</div></a>
-            <a href="ed.html"><div>Projeto de Estrutura de Dados</div></a>
-            <a href="dodgethecreeps.html"><div>Dodge the Creeps!</div></a>
-            <a href="pong.html"><div>Pong</div></a>
-            </section>
+            <div id="content-pt" style="height: 100%;">
+                <section class="projects">
+                    <h1>Projetos</h1>
+                    <a href="linearregression.html"><div>Algoritmo de Regressão Linear Simples</div></a>
+                    <a href="arduinomorsecode.html"><div>Tradutor de Código Morse usando Arduino</div></a>
+                    <a href="rpachallenge.html"><div>RPA Challenge</div></a>
+                    <a href="ed.html"><div>Projeto de Estrutura de Dados</div></a>
+                    <a href="dodgethecreeps.html"><div>Dodge the Creeps!</div></a>
+                    <a href="pong.html"><div>Pong</div></a>
+                </section>
+            </div>
+            <div id="content-en" style="height: 100%;">
+                <section class="projects">
+                    <h1>Projects</h1>
+                    <a href="linearregression.html"><div>Simple Linear Regression Algorithm</div></a>
+                    <a href="arduinomorsecode.html"><div>Morse Code Translator using Arduino</div></a>
+                    <a href="rpachallenge.html"><div>RPA Challenge</div></a>
+                    <a href="ed.html"><div>Data Structures Project</div></a>
+                    <a href="dodgethecreeps.html"><div>Dodge the Creeps!</div></a>
+                    <a href="pong.html"><div>Pong</div></a>
+                </section>
+            </div>
         </main>
         <footer>
-            <p class="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <p class="footer" id="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <div class="language">
+                <button class='language_button' onclick="setLanguage('pt')">PT-BR</button>
+                <button class='language_button' onclick="setLanguage('en')">EN-US</button>
+            </div>
         </footer>
     </body>
-    </html>
+    <script>
+        function setLanguage(language) {
+            localStorage.setItem('preferredLanguage', language);
+            if (language === 'pt') {
+                document.getElementById('content-pt').style.display = 'block';
+                document.getElementById('content-en').style.display = 'none';
+                document.getElementById('footer').textContent = 'Desenvolvido em HTML e CSS por Gabriel José Pereira';
+            } else if (language === 'en') {
+                document.getElementById('content-pt').style.display = 'none';
+                document.getElementById('content-en').style.display = 'block';
+                document.getElementById('footer').textContent = 'Developed in HTML and CSS by Gabriel José Pereira';
+
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            
+            // Se houver um idioma salvo, aplicá-lo, caso contrário, usar o idioma padrão (Português)
+            if (savedLanguage) {
+                setLanguage(savedLanguage);
+            } else {
+                setLanguage('pt');
+            }
+        });
+    </script>
+</html>

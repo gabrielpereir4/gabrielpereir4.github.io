@@ -27,27 +27,79 @@
             </ul>
         </header>
         <main>
-            <section class="projects">
-                <div class="projects_view">
-                    <h2>Dodge the Creeps!</h2>
-                    <div class="projects_view_desc">
-                        <img src="prints/dodgethecreeps.png">
-                        <div>Jogo 2D desenvolvido na plataforma Godot. Esse jogo consiste em evitar ser atingido pelos monstros que aparecem
-                            na tela. Esse jogo faz parte do Tutorial 2D do Godot. Desenvolvido usando a linguagem GDScript.
+            <div id="content-pt" style="height: 100%;">
+                <section class="projects">
+                    <div class="projects_view">
+                        <h2>Dodge the Creeps!</h2>
+                        <div class="projects_view_desc">
+                            <img src="prints/dodgethecreeps.png">
+                            <div>Jogo 2D desenvolvido na plataforma Godot. Esse jogo consiste em evitar ser atingido pelos monstros que aparecem
+                                na tela. Esse jogo faz parte do Tutorial 2D do Godot. Desenvolvido usando a linguagem GDScript.
+                            </div>
                         </div>
+                        <div class='projects_view_tech'>
+                            <h3>Tecnologias Utilizadas</h3>
+                                <div class='projects_view_tech_desc'>
+                                    <div>Godot</div>
+                                    <div>GDScript</div>
+                                </div>
+                            </div>
                     </div>
-                    <div class='projects_view_tech'>
-                        <h3>Tecnologias Utilizadas</h3>
-                            <div class='projects_view_tech_desc'>
+                </section>
+            </div>
+            <div id="content-en" style="height: 100%;">
+                <section class="projects">
+                    <div class="projects_view">
+                        <h2>Dodge the Creeps!</h2>
+                        <div class="projects_view_desc">
+                            <img src="prints/dodgethecreeps.png" alt="Dodge the Creeps!">
+                            <div>2D game developed on the Godot platform. This game involves avoiding being hit by the monsters that appear on the screen.
+                                It is part of the Godot 2D Tutorial. Developed using the GDScript language.
+                            </div>
+                        </div>
+                        <div class="projects_view_tech">
+                            <h3>Technologies Used</h3>
+                            <div class="projects_view_tech_desc">
                                 <div>Godot</div>
                                 <div>GDScript</div>
                             </div>
                         </div>
-                </div>
-            </section>
+                    </div>
+                </section>
+            </div>
         </main>
         <footer>
-            <p class="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <p class="footer" id="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <div class="language">
+                <button class='language_button' onclick="setLanguage('pt')">PT-BR</button>
+                <button class='language_button' onclick="setLanguage('en')">EN-US</button>
+            </div>
         </footer>
     </body>
+    <script>
+        function setLanguage(language) {
+            localStorage.setItem('preferredLanguage', language);
+            if (language === 'pt') {
+                document.getElementById('content-pt').style.display = 'block';
+                document.getElementById('content-en').style.display = 'none';
+                document.getElementById('footer').textContent = 'Desenvolvido em HTML e CSS por Gabriel José Pereira';
+            } else if (language === 'en') {
+                document.getElementById('content-pt').style.display = 'none';
+                document.getElementById('content-en').style.display = 'block';
+                document.getElementById('footer').textContent = 'Developed in HTML and CSS by Gabriel José Pereira';
+
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            
+            // Se houver um idioma salvo, aplicá-lo, caso contrário, usar o idioma padrão (Português)
+            if (savedLanguage) {
+                setLanguage(savedLanguage);
+            } else {
+                setLanguage('pt');
+            }
+        });
+    </script>
     </html>

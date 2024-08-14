@@ -27,27 +27,79 @@
             </ul>
         </header>
         <main>
-            <section class="projects">
-                <div class="projects_view">
-                    <h2>Pong</h2>
-                    <div class="projects_view_desc">
-                        <img src="prints/pong.png">
-                        <div>Clone do clássico jogo Pong feito em Godot, com GDScript. É possível jogar sozinho, contra um adversário programado,
-                            ou multiplayer local, com os jogadores compartilhando o teclado.
+            <div id="content-pt" style="height: 100%">
+                <section class="projects">
+                    <div class="projects_view">
+                        <h2>Pong</h2>
+                        <div class="projects_view_desc">
+                            <img src="prints/pong.png">
+                            <div>Clone do clássico jogo Pong feito em Godot, com GDScript. É possível jogar sozinho, contra um adversário programado,
+                                ou multiplayer local, com os jogadores compartilhando o teclado.
+                            </div>
                         </div>
+                        <div class='projects_view_tech'>
+                            <h3>Tecnologias Utilizadas</h3>
+                                <div class='projects_view_tech_desc'>
+                                    <div>Godot</div>
+                                    <div>GDScript</div>
+                                </div>
+                            </div>
                     </div>
-                    <div class='projects_view_tech'>
-                        <h3>Tecnologias Utilizadas</h3>
-                            <div class='projects_view_tech_desc'>
+                </section>
+            </div>
+            <div id="content-en" style="height: 100%">
+                <section class="projects">
+                    <div class="projects_view">
+                        <h2>Pong</h2>
+                        <div class="projects_view_desc">
+                            <img src="prints/pong.png" alt="Pong Game">
+                            <div>Clone of the classic Pong game made in Godot, using GDScript. It can be played solo against a programmed opponent,
+                                or in local multiplayer, with players sharing the keyboard.
+                            </div>
+                        </div>
+                        <div class="projects_view_tech">
+                            <h3>Technologies Used</h3>
+                            <div class="projects_view_tech_desc">
                                 <div>Godot</div>
                                 <div>GDScript</div>
                             </div>
                         </div>
-                </div>
-            </section>
+                    </div>
+                </section>
+            </div>
         </main>
         <footer>
-            <p class="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <p class="footer" id="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <div class="language">
+                <button class='language_button' onclick="setLanguage('pt')">PT-BR</button>
+                <button class='language_button' onclick="setLanguage('en')">EN-US</button>
+            </div>
         </footer>
     </body>
+    <script>
+        function setLanguage(language) {
+            localStorage.setItem('preferredLanguage', language);
+            if (language === 'pt') {
+                document.getElementById('content-pt').style.display = 'block';
+                document.getElementById('content-en').style.display = 'none';
+                document.getElementById('footer').textContent = 'Desenvolvido em HTML e CSS por Gabriel José Pereira';
+            } else if (language === 'en') {
+                document.getElementById('content-pt').style.display = 'none';
+                document.getElementById('content-en').style.display = 'block';
+                document.getElementById('footer').textContent = 'Developed in HTML and CSS by Gabriel José Pereira';
+
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            
+            // Se houver um idioma salvo, aplicá-lo, caso contrário, usar o idioma padrão (Português)
+            if (savedLanguage) {
+                setLanguage(savedLanguage);
+            } else {
+                setLanguage('pt');
+            }
+        });
+    </script>
     </html>

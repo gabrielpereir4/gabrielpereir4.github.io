@@ -30,19 +30,60 @@
                 <div class="profile">
                     <div class="profile_icon"></div>
                     <div class='profile_button'>
-                        <a class='profile_button_text' href="projects.html">Conheça meus projetos</a>
+                        <a class='profile_button_text' href="projects.html" id="projects-link">Conheça meus projetos</a>
                     </div>
                 </div>
                 <div class="about">
-                    <h2>Olá!</h2>
-                    <div class="about_me">Meu nome é <h1><strong>Gabriel Pereira.</strong></h1> Sou desenvolvedor de software e estudante
-                         de Análise e Desenvolvimento de Sistemas pela UNICAMP. Construo projetos <strong>backend, fullstack e automações RPA</strong>.
-                        <p>Conheça alguns dos projetos que já participei, alguns dos meus interesses e experiências.</p></div>
+                    <div id='content-pt'>
+                        <h2>Olá!</h2>
+                        <div class="about_me">Meu nome é <h1><strong>Gabriel Pereira.</strong></h1> Sou desenvolvedor de software e estudante
+                            de Análise e Desenvolvimento de Sistemas pela UNICAMP. Construo projetos <strong>backend, fullstack e automações RPA</strong>.
+                            <p>Conheça alguns dos projetos que já participei, alguns dos meus interesses e experiências.</p></div>
+                        </div>
+                    <div id="content-en">
+                            <h2>Hello!</h2>
+                            <div class="about_me">My name is <h1><strong>Gabriel Pereira.</strong></h1> I am a software developer and a student
+                                of Systems Analysis and Development at UNICAMP. I build <strong>backend, fullstack, and RPA automation projects</strong>.
+                                <p>Learn about some of the projects I have been involved in, some of my interests, and experiences.</p>
+                            </div>
+                        </div>
                 </div>
             </section>
         </main>
         <footer>
-            <p class="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <p class="footer" id="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <div class="language">
+                <button class='language_button' onclick="setLanguage('pt')">PT-BR</button>
+                <button class='language_button' onclick="setLanguage('en')">EN-US</button>
+            </div>
         </footer>
     </body>
+    <script>
+        function setLanguage(language) {
+            localStorage.setItem('preferredLanguage', language);
+            if (language === 'pt') {
+                document.getElementById('content-pt').style.display = 'block';
+                document.getElementById('content-en').style.display = 'none';
+                document.getElementById('projects-link').textContent = 'Conheça meus projetos';
+                document.getElementById('footer').textContent = 'Desenvolvido em HTML e CSS por Gabriel José Pereira';
+            } else if (language === 'en') {
+                document.getElementById('content-pt').style.display = 'none';
+                document.getElementById('content-en').style.display = 'block';
+                document.getElementById('projects-link').textContent = 'View my projects';
+                document.getElementById('footer').textContent = 'Developed in HTML and CSS by Gabriel José Pereira';
+
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            
+            // Se houver um idioma salvo, aplicá-lo, caso contrário, usar o idioma padrão (Português)
+            if (savedLanguage) {
+                setLanguage(savedLanguage);
+            } else {
+                setLanguage('pt');
+            }
+        });
+    </script>
 </html>

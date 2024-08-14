@@ -27,30 +27,85 @@
             </ul>
         </header>
         <main>
-            <section class="projects">
-                <div class="projects_view">
-                    <h2>Projeto de Estrutura de Dados</h2>
-                    <div class="projects_view_desc">
-                        <img src="prints/ed.png">
-                        <div>Projeto de Estrutura de Dados para a matéria de SI201 (Estrutura de Dados 1) da UNICAMP. O projeto simula o funcionamento
-                            de uma loja, em que há uma fila de pedidos, cada pedido composto de uma lista de itens, e a quantidade de itens representada por uma pilha.
-                            Há ainda também uma lista ligada separada indicando o estoque da loja. O projeto foi inteiramente desenvolvido em C, com forte uso de ponteiros e structs.
+            <div id="content-pt" style="height: 100%;">
+                <section class="projects">
+                    <div class="projects_view">
+                        <h2>Projeto de Estrutura de Dados</h2>
+                        <div class="projects_view_desc">
+                            <img src="prints/ed.png">
+                            <div>Projeto de Estrutura de Dados para a matéria de SI201 (Estrutura de Dados 1) da UNICAMP. O projeto simula o funcionamento
+                                de uma loja, em que há uma fila de pedidos, cada pedido composto de uma lista de itens, e a quantidade de itens representada por uma pilha.
+                                Há ainda também uma lista ligada separada indicando o estoque da loja. O projeto foi inteiramente desenvolvido em C, com forte uso de ponteiros e structs.
+                            </div>
+                        </div>
+                        <div class='projects_view_tech'>
+                        <h3>Tecnologias Utilizadas</h3>
+                            <div class='projects_view_tech_desc'>
+                                <div>C</div>
+                                <div>Pilhas</div>
+                                <div>Filas</div>
+                                <div>Listas Ligadas</div>
+                            </div>
                         </div>
                     </div>
-                    <div class='projects_view_tech'>
-                    <h3>Tecnologias Utilizadas</h3>
-                        <div class='projects_view_tech_desc'>
-                            <div>C</div>
-                            <div>Pilhas</div>
-                            <div>Filas</div>
-                            <div>Listas Ligadas</div>
+                </section>
+            </div>
+            <div id="content-en" style="height: 100%;">
+                <section class="projects">
+                    <div class="projects_view">
+                        <h2>Data Structures Project</h2>
+                        <div class="projects_view_desc">
+                            <img src="prints/ed.png" alt="Data Structures Project">
+                            <div>Data Structures project for the SI201 (Data Structures 1) course at UNICAMP. The project simulates the operation
+                                of a store, where there is an order queue, each order consisting of a list of items, and the quantity of items represented by a stack.
+                                There is also a separate linked list indicating the store's inventory. The project was entirely developed in C, with extensive use of pointers and structs.
+                            </div>
+                        </div>
+                        <div class="projects_view_tech">
+                            <h3>Technologies Used</h3>
+                            <div class="projects_view_tech_desc">
+                                <div>C</div>
+                                <div>Stacks</div>
+                                <div>Queues</div>
+                                <div>Linked Lists</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </main>
         <footer>
-            <p class="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <p class="footer" id="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <div class="language">
+                <button class='language_button' onclick="setLanguage('pt')">PT-BR</button>
+                <button class='language_button' onclick="setLanguage('en')">EN-US</button>
+            </div>
         </footer>
     </body>
+    <script>
+        function setLanguage(language) {
+            localStorage.setItem('preferredLanguage', language);
+            if (language === 'pt') {
+                document.getElementById('content-pt').style.display = 'block';
+                document.getElementById('content-en').style.display = 'none';
+                document.getElementById('footer').textContent = 'Desenvolvido em HTML e CSS por Gabriel José Pereira';
+            } else if (language === 'en') {
+                document.getElementById('content-pt').style.display = 'none';
+                document.getElementById('content-en').style.display = 'block';
+                document.getElementById('footer').textContent = 'Developed in HTML and CSS by Gabriel José Pereira';
+
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            
+            // Se houver um idioma salvo, aplicá-lo, caso contrário, usar o idioma padrão (Português)
+            if (savedLanguage) {
+                setLanguage(savedLanguage);
+            } else {
+                setLanguage('pt');
+            }
+        });
+    </script>
     </html>

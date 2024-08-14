@@ -37,6 +37,9 @@ body{
     color: white;
 }
 
+a div:hover{
+    color: var(--prim-color);
+}
 .projects h1{
     margin-bottom: 50px;
 }

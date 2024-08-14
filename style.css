@@ -39,6 +39,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 strong{
@@ -104,7 +105,36 @@ main {
     height: 50px;
     border: 5px solid var(--seco-color);
     border-radius: 6px;
-    
+}
+
+.profile_button:hover{
+    background-color: var(--tert-color);
+    color: var(--prim-color);
+}
+
+.language{
+    margin-left: auto; /* Empurra os botões para o canto direito */
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-right: 5%;
+    flex-direction: column;
+}
+
+.language_button{
+    justify-self: flex-end;
+    background-color: var(--prim-color);
+    color: var(--seco-color);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    width: 55px;
+}
+
+.language_button:hover{
+    background-color: var(--tert-color);
+    color: var(--prim-color);
 }
 
 .about{
@@ -122,8 +152,12 @@ main {
 }
 
 .footer{
+    display: flex;
     font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto do Google Fonts */
     color: var(--prim-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media (max-width: 768px) {

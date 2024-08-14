@@ -27,30 +27,85 @@
             </ul>
         </header>
         <main>
-            <section class="projects">
-                <div class="projects_view">
-                    <h2>Algoritmo de Regressão Linear</h2>
-                    <div class="projects_view_desc">
-                        <img src="prints/linearregression.png">
-                        <div>Algoritmo de Regressão Linear Simples desenvolvido em Python, com as bibliotecas NumPy, SkLearn, Pandas e PyLab. O algoritmo lê
-                            um arquivo .CSV que contém informações sobre as configurações de motores de carros e suas respectivas emissões, e prevê as emissões para um grupo de teste.
-                            O algoritmo atinge um valor R-Quadrado de 0,75.
+            <div id='content-pt' style="height: 100%;">
+                <section class="projects">
+                    <div class="projects_view">
+                        <h2>Algoritmo de Regressão Linear</h2>
+                        <div class="projects_view_desc">
+                            <img src="prints/linearregression.png">
+                            <div>Algoritmo de Regressão Linear Simples desenvolvido em Python, com as bibliotecas NumPy, SkLearn, Pandas e PyLab. O algoritmo lê
+                                um arquivo .CSV que contém informações sobre as configurações de motores de carros e suas respectivas emissões, e prevê as emissões para um grupo de teste.
+                                O algoritmo atinge um valor R-Quadrado de 0,75.
+                            </div>
+                        </div>
+                        <div class='projects_view_tech'>
+                        <h3>Tecnologias Utilizadas</h3>
+                            <div class='projects_view_tech_desc'>
+                                <div>Python</div>
+                                <div>SkLearn</div>
+                                <div>NumPy</div>
+                                <div>Pandas</div>
+                            </div>
                         </div>
                     </div>
-                    <div class='projects_view_tech'>
-                    <h3>Tecnologias Utilizadas</h3>
-                        <div class='projects_view_tech_desc'>
-                            <div>Python</div>
-                            <div>SkLearn</div>
-                            <div>NumPy</div>
-                            <div>Pandas</div>
+                </section>
+            </div>
+                <div id='content-en' style="height: 100%;">
+                    <section class="projects">
+                        <div class="projects_view">
+                            <h2>Linear Regression Algorithm</h2>
+                            <div class="projects_view_desc">
+                                <img src="prints/linearregression.png" alt="Linear Regression Algorithm">
+                                <div>Simple Linear Regression Algorithm developed in Python using the NumPy, SkLearn, Pandas, and PyLab libraries. The algorithm reads
+                                    a .CSV file containing information about car engine configurations and their respective emissions, and predicts emissions for a test group.
+                                    The algorithm achieves an R-Squared value of 0.75.
+                                </div>
+                            </div>
+                            <div class='projects_view_tech'>
+                                <h3>Technologies Used</h3>
+                                <div class='projects_view_tech_desc'>
+                                    <div>Python</div>
+                                    <div>SkLearn</div>
+                                    <div>NumPy</div>
+                                    <div>Pandas</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </section>
         </main>
         <footer>
-            <p class="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <p class="footer" id="footer">Desenvolvido em HTML e CSS por Gabriel José Pereira</p>
+            <div class="language">
+                <button class='language_button' onclick="setLanguage('pt')">PT-BR</button>
+                <button class='language_button' onclick="setLanguage('en')">EN-US</button>
+            </div>
         </footer>
     </body>
+    <script>
+        function setLanguage(language) {
+            localStorage.setItem('preferredLanguage', language);
+            if (language === 'pt') {
+                document.getElementById('content-pt').style.display = 'block';
+                document.getElementById('content-en').style.display = 'none';
+                document.getElementById('footer').textContent = 'Desenvolvido em HTML e CSS por Gabriel José Pereira';
+            } else if (language === 'en') {
+                document.getElementById('content-pt').style.display = 'none';
+                document.getElementById('content-en').style.display = 'block';
+                document.getElementById('footer').textContent = 'Developed in HTML and CSS by Gabriel José Pereira';
+
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const savedLanguage = localStorage.getItem('preferredLanguage');
+            
+            // Se houver um idioma salvo, aplicá-lo, caso contrário, usar o idioma padrão (Português)
+            if (savedLanguage) {
+                setLanguage(savedLanguage);
+            } else {
+                setLanguage('pt');
+            }
+        });
+    </script>
     </html>
